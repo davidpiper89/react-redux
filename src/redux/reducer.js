@@ -6,8 +6,8 @@ export function reducer(state = initialState, action) {
     case "SET_SIMPSONS_API":
       return { ...state, simpsons: action.payload };
 
-    // case "ADD_SIMPSONS_CHAR":
-    //   return { simpsons: action.userInput };
+    case "ADD_SIMPSONS_CHAR":
+      return {...state, action};
 
     default:
       return state;

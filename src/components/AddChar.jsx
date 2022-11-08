@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 
 class AddChar extends Component {
   onInput = (e) => {
-    this.props.dispatch({ type: "ADD_SIMPSONS_CHAR", userInput: e.target.value });
+    
+    this.props.dispatch({ type: "ADD_SIMPSONS_CHAR", [e.target.name]: e.target.value });
   };
 //   addCharacter = () => {
 //     const indexOf = this.state.listQuotes.data.findIndex(
@@ -28,9 +29,9 @@ class AddChar extends Component {
     return (
       <h2 onInput={this.onInput}>
         Add Character:
-        <input></input>
+        <input name="char"></input>
         and quote:
-        <input></input>
+        <input name="quote"></input>
         <button>Add</button>
       </h2>
     );
